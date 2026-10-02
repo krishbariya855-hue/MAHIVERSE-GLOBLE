@@ -1042,3 +1042,105 @@ section {
         transform: translateY(0);
     }
 }
+/* ===========================================
+   MAHIVERSE GLOBLE - PREMIUM SPICE ACCENTS
+=========================================== */
+
+/* Top Color Accents for Spice Cards */
+.card[data-id="garlic-powder-premium"] {
+    border-top: 4px solid #d4af37;
+}
+
+.card[data-id="onion-powder-premium"] {
+    border-top: 4px solid #8e2b4d;
+}
+
+.card[data-id="chilli-powder-premium"] {
+    border-top: 4px solid #c92a2a;
+}
+
+.card[data-id="turmeric-powder-premium"] {
+    border-top: 4px solid #e67700;
+}
+
+.card[data-id="coriander-powder-premium"] {
+    border-top: 4px solid #2f9e44;
+}
+
+/* Eye-Catching Quality Tags */
+.card[data-id="chilli-powder-premium"] .product-img-container::after {
+    content: "🔥 Pure & Pungent";
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #fff5f5;
+    color: #c92a2a;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid #ffc9c9;
+    letter-spacing: 0.3px;
+}
+
+.card[data-id="turmeric-powder-premium"] .product-img-container::after {
+    content: "✨ High Curcumin";
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #fff9db;
+    color: #b06200;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid #ffe066;
+    letter-spacing: 0.3px;
+}
+
+.card[data-id="coriander-powder-premium"] .product-img-container::after {
+    content: "🌿 Cold Milled";
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: #ebfbee;
+    color: #2b8a3e;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid #b2f2bb;
+    letter-spacing: 0.3px;
+}
+
+.product-img-container {
+    position: relative; /* Enables precise badge alignment */
+}
+
+/* Subtle Golden Border on Hover */
+.card:hover {
+    border-color: #d4af37;
+}
+
+/* Polished Variant Selectors */
+.weight-select {
+    cursor: pointer;
+    border: 1.5px solid #e0dcd3;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.weight-select:focus,
+.weight-select:hover {
+    border-color: #14532d;
+    box-shadow: 0 0 0 3px rgba(20, 83, 45, 0.08);
+}
+
+/* Button Elevation */
+.btn-card {
+    box-shadow: 0 4px 12px rgba(20, 83, 45, 0.15);
+}
+
+.btn-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(20, 83, 45, 0.25);
+}
