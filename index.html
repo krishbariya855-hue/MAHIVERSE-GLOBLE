@@ -205,7 +205,311 @@
           });
       });
   </script>
+<!-- ========================================== -->
+<!-- START: MAHIVERSE GLOBLE SPICES ADD-ON      -->
+<!-- ========================================== -->
+<style>
+  /* Unique styles for the new spice section */
+  .mg-spices-wrapper {
+    width: 100%;
+    padding: 60px 20px;
+    background: #fdfbf7;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
 
+  .mg-spices-container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .mg-spices-header {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .mg-spices-pill {
+    display: inline-block;
+    background: #fee4e2;
+    color: #b42318;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+  }
+
+  .mg-spices-title {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    color: #1e1e1e;
+    margin: 0 0 10px 0;
+    font-weight: 800;
+  }
+
+  .mg-spices-subtitle {
+    color: #615b57;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  .mg-spices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  .mg-spice-card {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    border: 1px solid #ebe5df;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+  }
+
+  .mg-spice-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+  }
+
+  .mg-card-chilli { border-top: 5px solid #d92d20; }
+  .mg-card-turmeric { border-top: 5px solid #e08a00; }
+  .mg-card-coriander { border-top: 5px solid #3e7b27; }
+
+  .mg-spice-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 2;
+  }
+
+  .mg-spice-img-box {
+    height: 200px;
+    background: #f7f4ee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    overflow: hidden;
+  }
+
+  .mg-spice-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mg-spice-details {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .mg-spice-sub {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #8c786a;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+  }
+
+  .mg-spice-name {
+    font-size: 1.25rem;
+    margin: 0 0 10px 0;
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .mg-spice-desc {
+    font-size: 0.88rem;
+    color: #55504c;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .mg-spice-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+    font-size: 0.82rem;
+    color: #3b3733;
+  }
+
+  .mg-spice-list li {
+    margin-bottom: 5px;
+  }
+
+  .mg-spice-footer {
+    margin-top: auto;
+    border-top: 1px solid #f0eae1;
+    padding-top: 14px;
+  }
+
+  .mg-spice-btn {
+    display: block;
+    text-align: center;
+    padding: 11px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #ffffff;
+    transition: opacity 0.2s ease;
+  }
+
+  .mg-spice-btn:hover {
+    opacity: 0.9;
+  }
+
+  .mg-btn-chilli { background: linear-gradient(135deg, #d92d20, #b42318); }
+  .mg-btn-turmeric { background: linear-gradient(135deg, #f59e0b, #d97706); }
+  .mg-btn-coriander { background: linear-gradient(135deg, #44802c, #2d5a1b); }
+
+  .mg-spice-trust {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    background: #ffffff;
+    border: 1px solid #eae5de;
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+  }
+
+  .mg-spice-trust-item span {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .mg-spice-trust-item p {
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #3a3530;
+  }
+</style>
+
+<section class="mg-spices-wrapper">
+  <div class="mg-spices-container">
+    
+    <!-- Section Title -->
+    <div class="mg-spices-header">
+      <span class="mg-spices-pill">100% Pure & Freshly Ground</span>
+      <h2 class="mg-spices-title">Our Premium Spice Range</h2>
+      <p class="mg-spices-subtitle">Aromatic, lab-tested, and packed with natural flavor and rich color for authentic Indian kitchens.</p>
+    </div>
+
+    <!-- 3 Cards: Chilli, Turmeric, Coriander -->
+    <div class="mg-spices-grid">
+      
+      <!-- 1. Red Chilli Powder -->
+      <div class="mg-spice-card mg-card-chilli">
+        <span class="mg-spice-badge">Authentic Heat</span>
+        <div class="mg-spice-img-box">
+          <!-- Replace 'images/chilli.jpg' with your image link if you have one, or leave as placeholder -->
+          <img src="images/chilli.jpg" alt="Red Chilli Powder" onerror="this.outerHTML='🌶️';">
+        </div>
+        <div class="mg-spice-details">
+          <span class="mg-spice-sub">Pungent & Vibrant Red</span>
+          <h3 class="mg-spice-name">Red Chilli Powder</h3>
+          <p class="mg-spice-desc">Carefully selected sun-dried red chillies ground to perfection. Gives bold heat and rich natural red color without added dyes.</p>
+          <ul class="mg-spice-list">
+            <li>✔ 100% Pure & Unadulterated</li>
+            <li>✔ High Natural Capsaicin & Aroma</li>
+            <li>✔ Available in 250g, 500g, 1kg</li>
+          </ul>
+          <div class="mg-spice-footer">
+            <a href="#contact" class="mg-spice-btn mg-btn-chilli">Inquire / Order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Turmeric Powder -->
+      <div class="mg-spice-card mg-card-turmeric">
+        <span class="mg-spice-badge">High Curcumin</span>
+        <div class="mg-spice-img-box">
+          <img src="images/turmeric.jpg" alt="Turmeric Powder" onerror="this.outerHTML='🟨';">
+        </div>
+        <div class="mg-spice-details">
+          <span class="mg-spice-sub">Golden Health & Color</span>
+          <h3 class="mg-spice-name">Pure Turmeric Powder (Haldi)</h3>
+          <p class="mg-spice-desc">Rich golden yellow turmeric sourced from prime rhizomes, known for its high curcumin content and earthy fragrance.</p>
+          <ul class="mg-spice-list">
+            <li>✔ Natural Curcumin Retained</li>
+            <li>✔ No Added Lead Chromate or Fillers</li>
+            <li>✔ Available in 250g, 500g, 1kg</li>
+          </ul>
+          <div class="mg-spice-footer">
+            <a href="#contact" class="mg-spice-btn mg-btn-turmeric">Inquire / Order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Coriander Powder -->
+      <div class="mg-spice-card mg-card-coriander">
+        <span class="mg-spice-badge">Aromatic & Citrusy</span>
+        <div class="mg-spice-img-box">
+          <img src="images/coriander.jpg" alt="Coriander Powder" onerror="this.outerHTML='🌿';">
+        </div>
+        <div class="mg-spice-details">
+          <span class="mg-spice-sub">Fresh Floral Aroma</span>
+          <h3 class="mg-spice-name">Coriander Powder (Dhaniya)</h3>
+          <p class="mg-spice-desc">Slow-ground dry coriander seeds that lock in natural essential oils to bring mild sweetness and thickness to your gravies.</p>
+          <ul class="mg-spice-list">
+            <li>✔ Retains Natural Essential Oils</li>
+            <li>✔ Freshly Milled & Sifted</li>
+            <li>✔ Available in 250g, 500g, 1kg</li>
+          </ul>
+          <div class="mg-spice-footer">
+            <a href="#contact" class="mg-spice-btn mg-btn-coriander">Inquire / Order</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Trust Badges Strip -->
+    <div class="mg-spice-trust">
+      <div class="mg-spice-trust-item">
+        <span>🌱</span>
+        <p>100% Pure Natural</p>
+      </div>
+      <div class="mg-spice-trust-item">
+        <span>🛡️</span>
+        <p>FSSAI Food Grade Standards</p>
+      </div>
+      <div class="mg-spice-trust-item">
+        <span>🧪</span>
+        <p>Lab Tested Purity</p>
+      </div>
+      <div class="mg-spice-trust-item">
+        <span>📦</span>
+        <p>Fresh Sealed Packaging</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ========================================== -->
+<!-- END: MAHIVERSE GLOBLE SPICES ADD-ON        -->
+<!-- ========================================== -->
   <script src="script.js?v=7.0" defer></script>
 </body>
 </html>
